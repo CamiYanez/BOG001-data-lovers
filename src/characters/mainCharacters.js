@@ -148,7 +148,7 @@ function checkFilters(checkbox) {
   function renderData(pageData) {
     displayData.innerHTML = "";
     let fragment = document.createDocumentFragment();
-    pageData.forEach(function (current) {
+    pageData.forEach(function (current, i) {
       let image = current.image;
       let name = current.name;
       let gender = current.gender;
@@ -163,11 +163,12 @@ function checkFilters(checkbox) {
       let textSpecies = document.createElement("h5");
       let textOrigin = document.createElement("h5");
 
+      containerCharacter.setAttribute("class", "containerCharacter");
+      containerCharacter.setAttribute("id", "character" + i);
+      imgCharacter.setAttribute("src", image);
       containerInfoCharacter.setAttribute("id", "infoCharacter");
       // containerInfoCharacter.setAttribute("class", "infoCharac");
       containerInfoCharacter.setAttribute("class", "infoCharac hide");
-      containerCharacter.setAttribute("class", "containerCharacter");
-      imgCharacter.setAttribute("src", image);
       imgCharacter.setAttribute("class", "imgCharacter");
       textName.textContent = name;
       textGender.textContent = gender;
@@ -190,18 +191,12 @@ function checkFilters(checkbox) {
 
 //Mostrar la info de personajes cuando se de click en la img
 const imgCharac = document.getElementsByClassName("imgCharacter");
-console.log(imgCharac);
 const char = document.getElementById("characters");
 char.addEventListener("click", function (e) {
   let characterFocus = e.target;
-  console.log(imgCharac[0].className);
-  console.log(characterFocus);
-  console.log(characterFocus.className);
-
   let infoFocus = characterFocus.nextSibling;
   if (characterFocus.className !== imgCharac[0].className) {
     infoFocus = characterFocus.parentNode;
   }
   infoFocus.classList.toggle("hide");
-  console.log(infoFocus);
 });
