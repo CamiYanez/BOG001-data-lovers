@@ -127,10 +127,10 @@ function checkFilters(checkbox) {
   optionsFilter.addEventListener("change", filter);
   let dataFiltered;
 
-  function filter(increment) {
+  function filter() {
     let filters = filterFunctions.detectCheck(arrChkbSpecies);
     dataFiltered = filterFunctions.filterData(dataGroup, filters);
-    let pagination = filterFunctions.paginate(page, dataFiltered, increment);
+    let pagination = filterFunctions.paginate(page, dataFiltered);
     renderData(pagination);
   }
 
@@ -139,12 +139,12 @@ function checkFilters(checkbox) {
   btnOrder.addEventListener("click", function () {
     const toggle = btnOrder.classList.toggle("az");
     filterFunctions.sort(dataFiltered, toggle);
-    let a = filterFunctions.paginate(page, dataFiltered, 10);
+    let a = filterFunctions.paginate(page, dataFiltered);
     renderData(a);
   });
 
   let displayData = document.getElementById("characters");
-  filter(10);
+  filter();
   function renderData(pageData) {
     displayData.innerHTML = "";
     let fragment = document.createDocumentFragment();
@@ -200,16 +200,3 @@ char.addEventListener("click", function (e) {
   }
   infoFocus.classList.toggle("hide");
 });
-
-
-let mediaqueryList = window.matchMedia("(min-width: 992px)");
-
-function manejador() {
-  if (mediaqueryList.matches) {
-    filter(50);
-    console.log('hola');
-    // alert('La media query ahora se cumple');
-  }
-}
-
-mediaqueryList.addEventListener('change', manejador);
