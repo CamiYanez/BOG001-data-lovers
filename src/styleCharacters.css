@@ -160,7 +160,7 @@ body {
 /* Estilos seccion de personajes */
 
 #containerCharacters {
-  background-image: url("../image/galaxy.jpg");
+  background-image: url("./image/galaxy.jpg");
   height: 100%;
   z-index: 4;
   position: relative;

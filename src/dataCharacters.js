@@ -33,9 +33,9 @@ function filterData(data, filters) {
 }
 
 //Funcion Slice para paginación
-function paginate(page, dataFiltered) {
-  const x = page * 10;
-  const y = x + 10;
+function paginate(page, dataFiltered, increment) {
+  const x = page * increment;
+  const y = x + increment;
   const pageData = dataFiltered.slice(x, y);
   return pageData;
 }

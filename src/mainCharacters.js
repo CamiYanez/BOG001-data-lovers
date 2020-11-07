@@ -1,4 +1,4 @@
-import data from "../data/rickandmorty/rickandmorty.js";
+import data from "./data/rickandmorty/rickandmorty.js";
 import filterFunctions from "./dataCharacters.js";
 
 // ----------------Efecto parallax-------------------
@@ -127,10 +127,10 @@ function checkFilters(checkbox) {
   optionsFilter.addEventListener("change", filter);
   let dataFiltered;
 
-  function filter() {
+  function filter(increment) {
     let filters = filterFunctions.detectCheck(arrChkbSpecies);
     dataFiltered = filterFunctions.filterData(dataGroup, filters);
-    let pagination = filterFunctions.paginate(page, dataFiltered);
+    let pagination = filterFunctions.paginate(page, dataFiltered, increment);
     renderData(pagination);
   }
 
@@ -139,12 +139,12 @@ function checkFilters(checkbox) {
   btnOrder.addEventListener("click", function () {
     const toggle = btnOrder.classList.toggle("az");
     filterFunctions.sort(dataFiltered, toggle);
-    let a = filterFunctions.paginate(page, dataFiltered);
+    let a = filterFunctions.paginate(page, dataFiltered, 10);
     renderData(a);
   });
 
   let displayData = document.getElementById("characters");
-  filter();
+  filter(10);
   function renderData(pageData) {
     displayData.innerHTML = "";
     let fragment = document.createDocumentFragment();
@@ -200,3 +200,16 @@ char.addEventListener("click", function (e) {
   }
   infoFocus.classList.toggle("hide");
 });
+
+
+let mediaqueryList = window.matchMedia("(min-width: 992px)");
+
+function manejador() {
+  if (mediaqueryList.matches) {
+    filter(50);
+    console.log('hola');
+    // alert('La media query ahora se cumple');
+  }
+}
+
+mediaqueryList.addEventListener('change', manejador);
