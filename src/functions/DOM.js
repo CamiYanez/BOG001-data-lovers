@@ -16,20 +16,28 @@ window.addEventListener("scroll", function () {
 });
 
 // ----------------Evento para mostrar información-------------------
-characters.addEventListener("click", handleClick);
+characters.addEventListener("click", handleClick, false);
+
 function handleClick(e) {
-    if (e.target.nodeName === "BUTTON") {
-        const img = e.target.parentElement;
-        const card = e.target.parentElement.parentElement.parentElement;
+    if (e.target.closest(".containerCharacter")) {
+        const card = e.target.closest(".containerCharacter");
         card.classList.toggle("rotate");
-
-        console.log(e.target);
-        console.log(e.target.parentElement);
-        console.log(e.target.parentElement.parentElement.parentElement);
-
-        console.log(`Click on button with id: ${e.target.id}`);
     }
 }
+// characters.addEventListener("click", handleClick);
+// function handleClick(e) {
+//     if (e.target.nodeName === "BUTTON") {
+//         const img = e.target.parentElement;
+//         const card = e.target.parentElement.parentElement.parentElement;
+//         card.classList.toggle("rotate");
+
+//         console.log(e.target);
+//         console.log(e.target.parentElement);
+//         console.log(e.target.parentElement.parentElement.parentElement);
+
+//         console.log(`Click on button with id: ${e.target.id}`);
+//     }
+// }
 
 //-------------Ocultar o mostrar ventana de filtros al darle click al icono de filtro
 btnFilter.addEventListener("click", function () {

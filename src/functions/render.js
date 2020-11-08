@@ -29,7 +29,7 @@ export const renderData = (pageData, charactersSection) => {
         btn.setAttribute("class", "cardBtn"); //---------------
         btn.setAttribute("id", id); //--------------
         containerInfoCharacter.setAttribute("id", "infoCharacter");
-        containerInfoCharacter.setAttribute("class", "infoCharac hide");
+        containerInfoCharacter.setAttribute("class", "infoCharac");
         imgCharacter.setAttribute("class", "imgCharacter");
         textName.textContent = name;
         textGender.textContent = gender;

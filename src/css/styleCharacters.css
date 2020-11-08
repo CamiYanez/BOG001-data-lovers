@@ -160,7 +160,8 @@
   /* Estilos seccion de personajes */
   
   #containerCharacters {
-    background-image: url("../images/galaxy.jpg");
+    /* background-image: url("../images/galaxy.jpg"); */
+    background-color: #eae9ec;
     height: 100%;
     z-index: 4;
     position: relative;
@@ -175,11 +176,16 @@
     position: relative;
     margin: 10px 10px;
   }
+
   
-  
+  .characters {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+}
+    
   .imgCharacter {
     max-width: 100%;
-    border-radius: 10px;
+    /* border-radius: 10px; */
   }
   
   .infoCharac {
@@ -196,14 +202,14 @@
   /* Estilos botones next y previus */
   .hide {
     display: none;
-  }
+}
   
   .info {
     background-color: #000;
-  }
+}
   
   #btnPrevNext {
-    text-align: center;
+      text-align: center;
   }
   
   footer {
@@ -215,21 +221,21 @@
   }
   
   .low-bar {
-    display: flex;
-    justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
     align-items: center;
     margin: 10px 10px 0px 10px;
-  }
+}
   
   .social-icons img {
-    width: 40px;
+      width: 40px;
     height: 40px;
-  }
-  
+}
+
   .community a {
-    text-decoration: none;
-    color: var(--font-color);
-    padding: 5px;
+      text-decoration: none;
+      color: var(--font-color);
+      padding: 5px;
   }
   
   .foot {
@@ -239,16 +245,16 @@
   
   @media (min-width: 576px) {
     #characters {
-      grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-  
+    
     .imgCharacter {
-      width: 160px;
-      height: 160px;
+        width: 160px;
+        height: 160px;
     }
-  }
-  
-  @media (min-width: 992px) {
+}
+
+@media (min-width: 992px) {
     #characters {
       grid-template-columns: repeat(4, 1fr);
       padding: 20px 20px;
@@ -262,5 +268,57 @@
       justify-content: space-evenly;
       align-items: center;
     }
+}
+
+/* estilos nuevos */
+.containerCharacter{
+    transform-style: preserve-3d;
+    transition: all 0.5s linear;
+}
+
+.rotate{
+    transform: rotateY(180deg);
+}
+
+.cardCharacter {
+    display:flex;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+  .containerImg{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #b3ac9f;
+  /* box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); */
+  box-shadow: 6px 7px 5px 0px rgba(0,0,0,0.75);
+  height: 200px;
+  width: 150px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  }  
+
+  .imgCharacter{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: block;
+  width: 150px;
   }
+
+  .cardBtn {
+  background: transparent;
+  border-style: none;
+  font-size: 18px;
+  }
+
+  .infoCharac {
+      transform: rotateY(180deg);
+  }
+
+  #characters {
+    grid-template-columns: 50% 50%;
+    justify-items: stretch;
+  }
+  /* estilos nuevos */
   
