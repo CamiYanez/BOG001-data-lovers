@@ -37,7 +37,7 @@ export const nextPage = (currentPage, url) => {
     const objParams = new URLSearchParams(url.search);
     const nextPage = currentPage + 1;
     objParams.set("page", nextPage.toString());
-    url.href = `${url.origin}?${objParams.toString()}`;
+    url.href = `${url.origin}${url.pathname}?${objParams.toString()}`;
 };
 
 /**

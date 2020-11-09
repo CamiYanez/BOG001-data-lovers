@@ -16,7 +16,6 @@ const resize = () => {
                 let x = e.target.getBoundingClientRect().x;
                 let width = e.target.getBoundingClientRect().width;
                 let total = Math.abs(x - width / 2) + 10;
-                console.log(x);
                 gifPortal.classList.add('animationsPortal')
                 setTimeout(() => {
                     gifPortal.classList.remove('animationsPortal')
@@ -25,7 +24,6 @@ const resize = () => {
                     // gifPortal.style.transform = `translateX(${x}px)`;
                     gifPortal.style.left = total + "px";
                 }, 750);
-                console.log(e.target.getBoundingClientRect())
                 // gifPortal.style.transform = "scale(0)";
                 // gifPortal.style.transform = "scale(1.2)"
             }
