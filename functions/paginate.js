@@ -50,5 +50,5 @@ export const previousPage = (currentPage, url) => {
     const objParams = new URLSearchParams(url.search);
     const previusPage = currentPage <= 0 ? 0 : currentPage - 1;
     objParams.set("page", previusPage.toString());
-    url.href = `${url.origin}?${objParams.toString()}`;
+    url.href = `${url.origin}${url.pathname}?${objParams.toString()}`;
 };
