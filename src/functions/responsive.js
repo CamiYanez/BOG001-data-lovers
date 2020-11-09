@@ -6,7 +6,6 @@ let mediaqueryList = window.matchMedia("(min-width: 576px)");
 
 const resize = () => {
     if (mediaqueryList.matches) {
-        console.log("if");
         coverCharactersWeb.classList.remove("hide");
         gifPortal.classList.remove("hide");
 
@@ -16,7 +15,7 @@ const resize = () => {
                 // let total = x - 80;
                 let x = e.target.getBoundingClientRect().x;
                 let width = e.target.getBoundingClientRect().width;
-                let total = Math.abs(x - width / 2);
+                let total = Math.abs(x - width / 2) + 10;
                 console.log(x);
                 gifPortal.classList.add('animationsPortal')
                 setTimeout(() => {
@@ -24,7 +23,7 @@ const resize = () => {
                 }, 2000);
                 setTimeout(() => {
                     // gifPortal.style.transform = `translateX(${x}px)`;
-                    gifPortal.style.left = x + "px";
+                    gifPortal.style.left = total + "px";
                 }, 750);
                 console.log(e.target.getBoundingClientRect())
                 // gifPortal.style.transform = "scale(0)";
@@ -34,7 +33,6 @@ const resize = () => {
 
 
     } else {
-        console.log("hola");
         coverCharactersWeb.classList.add("hide");
         gifPortal.classList.add("hide");
     }
