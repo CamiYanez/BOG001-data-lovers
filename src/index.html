@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/styleCharacters.css" />
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Pangolin&display=swap"
         rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Julee&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,12 +20,22 @@
     </div>
 
     <div id="hero">
-        <div id=dinamicCharacters></div>
-
-        <h1>
+        <!-- Hero Mobile view  -->
+        <!-- <h1 id="textHeroMobile">
             <span id="one" class="textSpan">Go with <strong>RICK</strong></span>
             <span id="two" class="textSpan">to discover the</span>
             <span id="three" class="textSpan">CHARACTERS</span>
+        </h1> -->
+
+        <h1 id="textHeroMobile" class="neon">
+            <span id="one" class="textSpan neon-1" data-text="Go with">Go with
+                <strong class="neon-strong glitch" data-text="Rick" data-glitch="Rick">Rick</strong></span>
+            <span id="two" class="textSpan neon-2" data-text=" to discover the">to discover the</span>
+            <span id="three" class="textSpan neon-3" data-text="CHARACTERS">CHARACTERS</span>
+        </h1>
+
+        <h1 class="glitch" data-glitch="Rick and Morty">
+            Rick and Morty
         </h1>
 
         <div id="containerRick">
@@ -38,6 +49,27 @@
         <div id="containerFrontPort">
             <img src="./images/portal front.png" id="frontPort" />
         </div>
+
+        <!-- Hero Web view -->
+        <img src="images/Hero_Gif_Portal.gif" id="gifPortal" class="gifPortal hide">
+        <div id="coverCharactersWeb" class="cover-web hide">
+            <div class=containerCoverCh>
+                <img src="images/Hero_Ants.png" id="coverCharacter1" class="coverCharacters">
+            </div>
+            <div class=containerCoverCh>
+                <img src="images/Hero_Rick.png" id="coverCharacter2" class="coverCharacters">
+            </div>
+            <div class=containerCoverCh>
+                <img src="images/Hero_Morty.png" id="coverCharacter3" class="coverCharacters">
+            </div>
+            <div class=containerCoverCh>
+                <img src="images/Hero_King.png" id="coverCharacter4" class="coverCharacters">
+            </div>
+            <div class=containerCoverCh>
+                <img src="images/Hero_Meek.png" id="coverCharacter5" class="coverCharacters">
+            </div>
+        </div>
+
     </div>
 
     <section id="containerCharacters">

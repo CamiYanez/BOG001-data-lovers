@@ -9,12 +9,12 @@
   body {
     width: 100%;
     color: ivory;
-    font-family: "Gloria Hallelujah";
+    font-family: "Julee";
   }
   /* Estilos header */
   
   #navbar {
-    background-color: #1e1f1e;
+    background-color: #1d212a;
     position: absolute;
     z-index: 5;
     width: 100%;
@@ -103,7 +103,7 @@
   /* Estilos filtros */
   
   #filtersBar {
-    background-color: #151619;
+    background-color: #1d212a;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -161,7 +161,7 @@
   
   #containerCharacters {
     /* background-image: url("../images/galaxy.jpg"); */
-    background-color: #eae9ec;
+    background-color: #151515;
     height: 100%;
     z-index: 4;
     position: relative;
@@ -195,7 +195,7 @@
     height: 95%;
     text-align: center;
     text-justify: auto;
-    background-color: #2c2d30;
+    background-color: #1d212a;
     border-radius: 10px;
   }
   
@@ -217,7 +217,7 @@
     padding-bottom: 0;
     height: 100%;
     color: #ae28f0;
-    background-color: #1e1f1e;
+    background-color: #1d212a;
   }
   
   .low-bar {
@@ -242,35 +242,9 @@
     display: grid;
     justify-items: center;
   }
+
   
-  @media (min-width: 576px) {
-    #characters {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .imgCharacter {
-        width: 160px;
-        height: 160px;
-    }
-}
-
-@media (min-width: 992px) {
-    #characters {
-      grid-template-columns: repeat(4, 1fr);
-      padding: 20px 20px;
-    }
-    .imgCharacter {
-      width: 200px;
-      height: 200px;
-    }
-    .low-bar {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-    }
-}
-
-/* estilos nuevos */
+/*----------------------- estilos nuevos ----------------*/
 .containerCharacter{
     transform-style: preserve-3d;
     transition: all 0.5s linear;
@@ -290,7 +264,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #b3ac9f;
+  background-color: #1d212a;
   /* box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75); */
   box-shadow: 6px 7px 5px 0px rgba(0,0,0,0.75);
   height: 200px;
@@ -314,6 +288,7 @@
 
   .infoCharac {
       transform: rotateY(180deg);
+      
   }
 
   #characters {
@@ -322,3 +297,144 @@
   }
   /* estilos nuevos */
   
+   
+
+@media (min-width: 576px) {  
+    .cover-web{    
+        /* position: absolute; */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        z-index: 20;
+        margin-bottom: 30px;
+    }
+
+    #coverCharacter2, #coverCharacter3 {
+        height: 230px;
+    }
+
+    .gifPortal{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        z-index: 1;
+    }
+    
+    .coverCharacters{
+        transition: all .9s;
+    }
+    
+    .coverCharacters:hover{
+        transform: scale(1.2);
+    }
+    
+    #characters {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 20px 20px;
+    }
+    
+    .imgCharacter {
+        width: 180px;
+        
+        height: 180px;
+        border-radius: 5px 0px 0px 5px;
+    }
+    
+    .low-bar {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    #rick, #port, #frontPort, #textHeroMobile {
+        display: none;
+    }
+    
+    .containerCoverCh {
+        display: flex;
+        justify-content: center;
+        width:100%;
+    }
+
+    .infoCharac{
+        position: relative;
+        transform: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px 5px 5px 0px;
+        word-wrap: break-word;
+        max-width: 135px;
+        display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 10px; 
+
+
+    }
+    
+    .containerCharacter {
+        display: flex;
+      box-shadow: 6px 7px 5px 0px rgba(0,0,0,0.75);
+      min-width: 335px;
+    transform: rotateY(0deg);
+      
+
+
+    }
+
+    #characters {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .containerImg{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        box-shadow: none;
+        min-width: 200px;
+
+    }
+    
+    .cardBtn{
+        display: none;
+    }
+
+    .animationsPortal{
+        animation-name: size;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes size {
+        0%{transform: scale(1)}
+        50%{transform: scale(0)}
+        100%{transform: scale(1)}
+    }  
+
+}
+
+@media (min-width: 992px) {
+    #characters {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .imgCharacter {
+        width: 200px;
+        height: 200px;
+
+    }
+
+    .infoCharac {
+        max-width: 260px;
+        min-width: 250px;
+    }
+    
+}
+
+@media (min-width: 1400px) {
+    #characters {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

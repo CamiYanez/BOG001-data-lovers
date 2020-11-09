@@ -1,30 +1,47 @@
-let mediaqueryList = window.matchMedia("(min-width: 992px)");
+const coverCharactersWeb = document.getElementById("coverCharactersWeb");
+const gifPortal = document.getElementById("gifPortal");
 
-export const manejador = () => {
+let mediaqueryList = window.matchMedia("(min-width: 576px)");
+
+
+const resize = () => {
     if (mediaqueryList.matches) {
-        alert("La media query ahora se cumple");
-        // filter(50);
+        console.log("if");
+        coverCharactersWeb.classList.remove("hide");
+        gifPortal.classList.remove("hide");
+
+        coverCharactersWeb.addEventListener("click", (e) => {
+            if (e.target.closest('.coverCharacters')) {
+                // let x = e.offsetX
+                // let total = x - 80;
+                let x = e.target.getBoundingClientRect().x;
+                let width = e.target.getBoundingClientRect().width;
+                let total = Math.abs(x - width / 2);
+                console.log(x);
+                gifPortal.classList.add('animationsPortal')
+                setTimeout(() => {
+                    gifPortal.classList.remove('animationsPortal')
+                }, 2000);
+                setTimeout(() => {
+                    // gifPortal.style.transform = `translateX(${x}px)`;
+                    gifPortal.style.left = x + "px";
+                }, 750);
+                console.log(e.target.getBoundingClientRect())
+                // gifPortal.style.transform = "scale(0)";
+                // gifPortal.style.transform = "scale(1.2)"
+            }
+        })
+
+
+    } else {
+        console.log("hola");
+        coverCharactersWeb.classList.add("hide");
+        gifPortal.classList.add("hide");
     }
 };
 
-mediaqueryList.addEventListener("change", manejador);
+window.addEventListener("resize", resize);
+resize();
 
-const dinamicCharacters = document.getElementById("dinamicCharacters");
+export default {};
 
-let character1 = document.createElement("img");
-let character2 = document.createElement("img");
-let character3 = document.createElement("img");
-let character4 = document.createElement("img");
-let character5 = document.createElement("img");
-
-character1.setAttribute("class", "charactersHeader");
-character2.setAttribute("class", "charactersHeader");
-character3.setAttribute("class", "charactersHeader");
-character4.setAttribute("class", "charactersHeader");
-character5.setAttribute("class", "charactersHeader");
-
-dinamicCharacters.appendChild(character1);
-dinamicCharacters.appendChild(character2);
-dinamicCharacters.appendChild(character3);
-dinamicCharacters.appendChild(character4);
-dinamicCharacters.appendChild(character5);

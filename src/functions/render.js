@@ -31,10 +31,10 @@ export const renderData = (pageData, charactersSection) => {
         containerInfoCharacter.setAttribute("id", "infoCharacter");
         containerInfoCharacter.setAttribute("class", "infoCharac");
         imgCharacter.setAttribute("class", "imgCharacter");
-        textName.textContent = name;
-        textGender.textContent = gender;
-        textSpecies.textContent = species;
-        textOrigin.textContent = origin;
+        textName.innerHTML = "<span>Name: </span>" + name;
+        textGender.innerHTML = "<span>Gender: </span>" + gender;
+        textSpecies.innerHTML = "<span>Specie: </span>" + species;
+        textOrigin.innerHTML = "<span>Origin: </span>" + origin;
         btn.textContent = "Show info";
 
         cardCharacter.appendChild(containerCharacter);

@@ -3,11 +3,11 @@ import { filterData, checkFilters } from "./filters.js";
 import { paginate, getPage, nextPage, previousPage } from "./paginate.js";
 import { renderData } from "./render.js";
 import { btnNext, btnPrevious } from "./DOM.js";
-import { } from "./responsive.js";
+import "./responsive.js";
 
 //Variables
 const data = dataFile.results;
-const pageSize = 10;
+const pageSize = 12;
 const charactersSection = document.getElementById("characters");
 // Almacenar los checkbox
 let arrChkbSpecies = document.querySelectorAll(".specie");
