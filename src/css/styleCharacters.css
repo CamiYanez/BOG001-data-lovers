@@ -10,7 +10,7 @@
     width: 100%;
     color: ivory;
     font-family: "Julee";
-    line-height: 30px;
+    font-size: 18px
   }
   /* Estilos header */
   
@@ -212,12 +212,18 @@
     text-justify: auto;
     background-color: #1d212a;
     border-radius: 10px;
+    line-height: 24px;
+    padding: 10px 5px;
   }
 
   .infoCharac span {
-    color: #00ff95;
+    color: #b039ff;
     }
   
+    .infoCharac h4 {
+        margin: 12px 0;
+    }
+
   /* Estilos botones next y previus */
   .hide {
     display: none;
@@ -511,7 +517,7 @@
     }
 
     #hero{
-        background-image: url(../images/hero_galaxy.jpg);
+        background-image: url(../images/hero_galaxy.jpeg);
     }
     
     #hero h1.glitch{
@@ -715,9 +721,7 @@
         text-align: left;
     }
 
-    .infoCharac h4{
-    margin: 8px 0;
-    }
+
 
     #characters {
         grid-template-columns: repeat(2, 1fr);

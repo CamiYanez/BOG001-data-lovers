@@ -11,8 +11,16 @@ export const btnNext = document.getElementById("next");
 
 // ----------------Efecto parallax-------------------
 window.addEventListener("scroll", function () {
+    const rick = document.getElementById("rick");
+    const port = document.getElementById("port");
+    const frontPort = document.getElementById("frontPort");
     let value = window.scrollY;
-    rick.style.bottom = value * -0.5 + "px";
+    let widthRick = 195 - value * 0.2;
+    let widthPort = 300 - value * 0.2;
+    containerRick.style.bottom = value * -0.5 + "px";
+    rick.style.width = widthRick + "px";
+    port.style.width = widthPort + "px";
+    frontPort.style.width = widthPort + "px";
 });
 
 // ----------------Evento para mostrar información-------------------

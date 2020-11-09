@@ -4,6 +4,7 @@ import { paginate, getPage, nextPage, previousPage } from "./paginate.js";
 import { renderData } from "./render.js";
 import { btnNext, btnPrevious } from "./DOM.js";
 import "./responsive.js";
+import { order, sort } from "./utilities.js";
 
 //Variables
 const data = dataFile.results;
@@ -61,4 +62,14 @@ btnNext.addEventListener("click", () => {
 btnPrevious.addEventListener("click", () => {
     const page = parseInt(getPage(url));
     previousPage(page, url);
+});
+
+//Evento para sort
+order.addEventListener("click", function () {
+    const toggle = order.classList.toggle("az");
+    const page = parseInt(getPage(url));
+    const dataFiltered = filterData(data, filters);
+    sort(dataFiltered, toggle);
+    let pagination = paginate(page, 12, dataFiltered);
+    renderData(pagination, charactersSection);
 });

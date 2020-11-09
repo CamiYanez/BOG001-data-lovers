@@ -35,7 +35,7 @@ export const renderData = (pageData, charactersSection) => {
         textGender.innerHTML = "<span>Gender: </span>" + gender;
         textSpecies.innerHTML = "<span>Specie: </span>" + species;
         textOrigin.innerHTML = "<span>Origin: </span>" + origin;
-        btn.textContent = "Show info";
+        btn.textContent = name;
 
         cardCharacter.appendChild(containerCharacter);
         containerCharacter.appendChild(containerImage);

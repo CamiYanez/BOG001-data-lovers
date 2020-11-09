@@ -1,8 +1,4 @@
-/**
- * @typedef {Object} Characters
- * @property {String} species
- * @property {String} name
- */
+export const order = document.getElementById("order");
 
 /**
  *
@@ -23,3 +19,4 @@ export const sort = (data, toggle) => {
         data = data.reverse();
     }
 };
+
